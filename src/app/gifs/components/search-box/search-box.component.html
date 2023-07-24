@@ -1,0 +1,11 @@
+<div class="md:flex items-center pt-10 pb-4 gap-4">
+    <h5 class="pb-4 md:pb-0">Escribe el nombre del tag y presiona entre para ver los resultados</h5>
+    <input type="text"
+        class="border-b border-black w-80"
+        placeholder="Buscar gifs..."
+        (keyup.enter)="searchTag()"
+        #txtTagInput
+    >
+</div>
+
+

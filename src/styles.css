@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gifs-list {
+    column-count: 4;
+    column-gap: 10px;
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: stretch; */
+}
+
+.el-gif {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+
+@media (min-width: 550px) {
+
+}
