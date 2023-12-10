@@ -7,6 +7,7 @@ import { GifsService } from '../../services/gifs.service';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent {
+  
   constructor(private _gifsService: GifsService){}
 
   get tags() {

@@ -26,10 +26,11 @@ export class GifsService {
   private organizeHistory(tag: string) {
     tag = tag.toLowerCase();
     if ( this._tagsHistory.includes(tag)) {
-      this._tagsHistory = this._tagsHistory.filter((oldTag) => oldTag !== tag);
+      // this._tagsHistory = this._tagsHistory.filter((oldTag) => oldTag !== tag);
+      return
     }
-    this._tagsHistory.unshift(tag);
-    this._tagsHistory = this._tagsHistory.splice(0, 10);
+    this._tagsHistory.push(tag);
+    this._tagsHistory = this._tagsHistory.splice(0, 7);
     this.saveLocalStorage();
   }
 
@@ -46,8 +47,14 @@ export class GifsService {
   }
 
   async searchTag(tag: string):Promise<void> {
+
     if(tag.length === 0) return;
+    
     this.organizeHistory(tag)
+
+    if(this._tagsHistory.length === 7) {
+      console.log('has llegado al límite')
+    }
 
     const params = new HttpParams ()
       .set('api_key', GIPHY_API_KEY)

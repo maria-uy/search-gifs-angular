@@ -1,10 +1,17 @@
 
 <div class="el-gif">
-    <img class="rounded-lg w-full" [src]="gif.images.downsized.url" [alt]="gif.title">
+    <!-- <img class="rounded-lg w-full" [src]="gif.images.downsized.url" [alt]="gif.title"> -->
+    <app-lazy-image
+        [url]="gif.images.downsized.url"
+        [alt]="gif.title || 'No title'"
+    ></app-lazy-image>
     <div class="text-black text-xs p-1">
-        {{gif.title}}
+        {{ gif.title || 'No title' }}
     </div>
 </div>
+
+
+
 <!-- 
 <img class="card-img-top" [src]="gif.images.downsized.url" [alt]="gif.title">
 <div class="card-body text-dark">

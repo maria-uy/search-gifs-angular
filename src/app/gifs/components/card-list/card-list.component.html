@@ -1,3 +1,9 @@
-<div class="columns-2 md:columns-3 lg:columns-4 gap-4">
+
+<div
+    *ngIf="gifs && gifs.length > 0; else noElements"
+    class="columns-2 md:columns-3 lg:columns-4 gap-4">
     <app-gifs-card *ngFor="let gif of gifs" [gif]="gif"></app-gifs-card>
 </div>
+<ng-template #noElements>
+    <p class="text-rose-600">No gifs found</p>
+</ng-template>

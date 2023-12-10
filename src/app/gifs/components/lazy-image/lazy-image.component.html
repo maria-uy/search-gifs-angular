@@ -1,0 +1,15 @@
+<div class="flex content-center rounded-lg bg-black">
+    <img
+       [src]="url" 
+       [alt]="alt" 
+       class="rounded-lg w-full"
+       (load)="onLoad()"
+       [ngStyle]="{ display: hasLoaded ? '' : 'none'}"
+    />
+    
+    <img
+        *ngIf="!hasLoaded"
+        src="../../../../assets/spinning-circles.svg"
+        class="w-[50px] h-[50px] mx-auto my-4"
+    />
+</div>
